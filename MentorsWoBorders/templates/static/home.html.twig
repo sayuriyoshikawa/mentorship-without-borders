@@ -1,0 +1,1167 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mentorship
+{% endblock %}
+
+{% block body %}
+
+<style>
+	 @import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400;500;700;800&display=swap');
+
+        
+		html,
+		body {
+			overflow-x: hidden;
+			height: 100%;
+		}
+
+		body {
+			background-color: #F3E9D2;
+			padding: 0;
+			margin: 0;
+			font-family: 'Baloo Bhaijaan 2', cursive;
+		}
+
+	/* navbar style start  */
+		.header {
+			display: block;
+			margin: 0 auto;
+			width: 100%;
+			max-width: 100%;
+			box-shadow: none;
+			background-color: #114B5F;
+			position: fixed;
+			height: 60px !important;
+			overflow: hidden;
+			z-index: 10;
+		}
+		.header h2 {
+			text-align: center;
+			margin-top: 15px;
+			color: white;
+		}
+
+		.main {
+			margin: 60px auto 0;
+			display: block;
+			height: 100%;
+		}
+
+		.mainInner {
+			display: table;
+			height: 100%;
+			width: 100%;
+			text-align: center;
+		}
+
+		.mainInner div {
+			display: table-cell;
+			vertical-align: middle;
+			font-size: 3em;
+			font-weight: bold;
+			letter-spacing: 1.25px;
+		}
+
+		#sidebarMenu {
+			height: 100%;
+			position: fixed;
+			left: 0;
+			width: 250px;
+			margin-top: 60px;
+			transform: translateX(-250px);
+			transition: transform 250ms ease-in-out;
+			background: #Fff;
+			z-index: 100;
+		}
+
+		.sidebarMenuInner {
+			margin: 0;
+			padding: 0;
+			border-top: 1px solid rgba(255, 255, 255, 0.10);
+		}
+
+		.sidebarMenuInner li {
+			list-style: none;
+			color: #114B5F;
+			text-transform: uppercase;
+			font-weight: bold;
+			padding: 20px;
+			cursor: pointer;
+			border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+		}
+
+		.limenu li:hover {
+			background-color: #F3E9D2;
+		}
+
+		.sidebarMenuInner li span {
+			display: block;
+			font-size: 14px;
+			color: rgba(255, 255, 255, 0.50);
+		}
+
+		.sidebarMenuInner li a {
+			color: #114B5F;
+			text-transform: uppercase;
+			font-weight: bold;
+			cursor: pointer;
+			text-decoration: none;
+		}
+
+		input[type="checkbox"]:checked~#sidebarMenu {
+			transform: translateX(0);
+		}
+
+		input[type=checkbox] {
+			transition: all 0.3s;
+			box-sizing: border-box;
+			display: none;
+		}
+
+		.sidebarIconToggle {
+			transition: all 0.3s;
+			box-sizing: border-box;
+			cursor: pointer;
+			position: absolute;
+			z-index: 99;
+			height: 100%;
+			width: 100%;
+			top: 22px;
+			left: 15px;
+			height: 22px;
+			width: 22px;
+		}
+
+		.spinner {
+			transition: all 0.3s;
+			box-sizing: border-box;
+			position: absolute;
+			height: 3px;
+			width: 100%;
+			background-color: #fff;
+		}
+
+		.horizontal {
+			transition: all 0.3s;
+			box-sizing: border-box;
+			position: relative;
+			float: left;
+			margin-top: 3px;
+		}
+
+		.diagonal.part-1 {
+			position: relative;
+			transition: all 0.3s;
+			box-sizing: border-box;
+			float: left;
+		}
+
+		.diagonal.part-2 {
+			transition: all 0.3s;
+			box-sizing: border-box;
+			position: relative;
+			float: left;
+			margin-top: 3px;
+		}
+
+		input[type=checkbox]:checked~.sidebarIconToggle > .horizontal {
+			transition: all 0.3s;
+			box-sizing: border-box;
+			opacity: 0;
+		}
+
+		input[type=checkbox]:checked~.sidebarIconToggle > .diagonal.part-1 {
+			transition: all 0.3s;
+			box-sizing: border-box;
+			transform: rotate(135deg);
+			margin-top: 8px;
+		}
+
+		input[type=checkbox]:checked~.sidebarIconToggle > .diagonal.part-2 {
+			transition: all 0.3s;
+			box-sizing: border-box;
+			transform: rotate(-135deg);
+			margin-top: -9px;
+		}
+
+		.sidebarMenuInner img {
+			width: 80%;
+			margin: auto;
+		}
+	/* nabvar style end  */
+
+	/* container style  */
+		.head-card {
+			text-align:center;
+		}
+		.btntop {
+			margin-left: 12%;
+		}
+		.mymentor {
+			margin-top: 40px;
+			margin-left: 11%;
+			
+		}
+		
+		/* .text-end {
+			margin-left: 835px;
+			background-color: #88D498;
+
+		} */
+		.workbook {
+			color: #1a936f;
+			text-align:center;
+		}
+		.findmentor {
+			background-color: #88D498;
+		}
+		.text-end:hover {
+			background-color: black;
+			color: white ;
+		}
+
+		.workbook-end {
+			margin-left:75%;
+			width:150px;
+			background-color: #88D498;
+			color :white;
+		}
+
+		.workbook-end:hover {
+			color: black;
+		}
+		
+
+		.icon-col {
+			font-size: 1.5rem;
+			color: white;
+			text-decoration: none;
+			background-color: #88D498;
+		}
+		.icon-col:hover {
+			color: black;
+		}
+
+		.work-btn{
+			background-color: #88D498;
+			color: white;
+		}
+		.work-btn:hover {
+			color:black;
+		}
+		.left {
+            width: 40%;
+            margin: auto;
+        }
+
+        .middle {
+            
+            margin: auto;
+        }
+		.table {
+			width :100%;
+		}
+
+        .right {
+            width: 60%;
+            margin-top: 0;
+        }
+
+
+	/* MENTOR PAGE STYLE START */
+		.mentormain {
+            width: 90vw;
+            min-width: 300px;
+            min-height: 70vh;
+            margin: auto;
+            padding-top: 20px;
+        }
+
+        /* mybio  */
+        .mybio {
+            margin: auto;
+            width: 100%;
+            display: flex;
+            padding: 10px;
+            border: solid 8px white;
+        }
+
+        .leftandmiddle {
+            display: flex;
+        }
+
+        .mentorleft {
+            width: 40%;
+            margin: auto;
+        }
+
+		.mentorleft {
+            width: 20%;
+            margin: auto;
+        }
+
+
+        .mentormiddle {
+            width: 60%;
+            margin: auto;
+        }
+
+        .mentorright {
+            width: 60%;
+            margin-top: 0;
+        }
+		.menteeright {
+            width: 40%;
+            margin-top: 0;
+        }
+
+        .editbtn {
+            color: white;
+            background-color: #88D498;
+            width: 35px;
+            height: 35px;
+            margin: auto;
+        }
+
+        .mybio img {
+            width: 70%;
+            margin: auto;
+        }
+
+        .mentortable {
+            width: 17%;
+            color: #114B5F;
+        }
+		.menteetable {
+            width: 100%;
+            color: #114B5F;
+        }
+
+        .mentoraccordion {
+            width: 90%;
+            color: #114B5F;
+        }
+
+        .mentoraccordion-button,
+        .mentoraccordion-collapse {
+            background-color: #F3E9D2;
+            color: #114B5F;
+        }
+
+        /* menteelist */
+        .menteelist {
+            margin-top: 50px;
+        }
+
+        .menteelist h1 {
+            color: #1A936F;
+            font-size: 4rem;
+        }
+
+        .bio {
+            height: 100%;
+        }
+
+        .bio img {
+            overflow: hidden;
+            height: 11vw;
+            min-height: 100px;
+            margin-left: 2rem;
+        }
+
+        .bio h4 {
+            text-align: center;
+        }
+        .addmentee {
+            color: white;
+            background-color: #1A936F;
+        }
+
+        .menteeinfo {
+            height: 70%;
+        }
+		.menteeleft img {
+			width:50%;
+		}
+
+        h1, h2, h3, h4, h5, h6 {
+			 font-family: 'Baloo Bhaijaan 2', cursive;
+		}
+
+        @media screen and (max-width:768px) {
+            .mybio {
+                margin: auto;
+                width: 100%;
+                display: block;
+            }
+
+            .mentorleft {
+                width: 35%;
+                margin: auto;
+            }
+
+            .mentormiddle {
+                width: 65%;
+                margin: auto;
+            }
+
+            .mentorright {
+                width: 100%;
+                margin-top: 0;
+            }
+        }
+
+        @media screen and (max-width:425px) {
+            .mybio {
+                display: block;
+            }
+
+            .leftandmiddle {
+                display: block;
+            }
+
+            .mentorleft {
+                width: 70%;
+                margin: auto;
+                padding-bottom: 10px;
+            }
+
+            .mentormiddle {
+                width: 100%;
+                margin: ;
+            }
+
+            .mentorright {
+                width: 100%;
+                margin-top: 0;
+            }
+
+            .mybio img {
+                width: 70%;
+                margin: auto;
+            }
+
+            .mentortable {
+                width: 17%;
+                color: #114B5F;
+            }
+
+            .mentoraccordion {
+                width: 90%;
+                color: #114B5F;
+            }
+        }
+		 @media screen and (max-width:486px) {
+			 .header h2 {
+                font-size:5vw!important;
+			 }
+		 }
+	/* MENTOR PAGE STYLE END  */
+</style>
+</head>
+
+<body>
+
+{# MENTEE STARTS HERE  #}
+ {# navbar start  #}
+		{% if self.approved == 'Approved' %}
+			{% if self.mentormantee == 'Mentee' %}
+				<div class="header">
+		<h2 class="mt-2" style="font-size:2rem;  font-family: 'Baloo Bhaijaan 2', cursive;">Mentorship <img src="../../assets/images/logo5.jpg" class="logo-sm" style="height: 40px;"> Without Borders</h2>
+	</div>
+	<input type="checkbox" class="openSidebarMenu" id="openSidebarMenu">
+	<label for="openSidebarMenu" class="sidebarIconToggle">
+		<div class="spinner diagonal part-1"></div>
+		<div class="spinner horizontal"></div>
+		<div class="spinner diagonal part-2"></div>
+	</label>
+	<div id="sidebarMenu">
+		<ul class="sidebarMenuInner">
+			<center>
+				<!-- profile image, name  -->
+				{% for mentee in mentees %}
+				<li>{% endfor %}{{self.firstname}}</li>
+			</center>
+			<div class="limenu">
+				<li>
+					<a href="/home">Home</a>
+				</li>
+				{#      <li><a href="#">Workbook</a></li> #}
+				<li><a href="/mentorfind">Find mentor</a></li> 
+				{#     <li><a href="/mentoredit">Edit bio</a></li>
+																												 <li><a href="/mentorcreate">Create bio</a></li> #}
+					<li>
+						<a href="/logout"> Log out</a>
+				</li>
+			</div>
+		</ul>
+	</div><br><br><br>
+ {# navbar end  #}
+ {% for mentee in mentees %}
+	{% if mentee.fk_user == self %}
+
+		<div class="mentormain mb-5">
+		<h4 style="color: #1A936F;" class="animate__animated animate__fadeInDown">My BIO</h4>
+        <!-- my bio start -->
+        <div class="mybio rounded">
+            <div class="leftandmiddle">
+                <div class="menteeleft">
+                    <center>
+						{% if mentee.picture =="" %}
+							<img  src="../../assets/images/profi.png">
+						{% else %}
+							<img src="{{mentee.picture}}" alt="{{mentee.picture}}" class="img-fluid rounded"/>
+						{% endif %}
+                        <h5 class="mt-2 mb-2">{{self.firstname}}  {{self.lastname}}</h5>
+                        <a  href="/menteeedit/{{mentee.id}}"><button class="btn btn-sm editbtn rounded-circle" type="submit" href="/menteeedit/{{mentee.id}}">
+                        <i class="bi bi-pencil-fill"></i>
+                        </button></a>
+						
+                    </center>
+                </div>
+                <div class="mentormiddle text-start">
+                    <center>
+                        <table class="table menteetable">
+                            <tbody>
+								<tr>
+                                    <th scope="row" class="border-0">Username</th>
+                                    <td class="border-0">{{mentee.username}}</td>
+                                </tr>
+							<tr>
+                                    <th scope="row" class="border-0">Education</th>
+                                    <td class="border-0">{{mentee.education}}</td>
+                                </tr>
+                                
+                                
+                                <tr>
+                                    <th scope="row" class="border-0">Skills</th>
+                                    <td class="border-0">{{mentee.skills}}</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" class="border-0">Profession</th>
+                                    <td class="border-0">{{mentee.profession}}</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" class="border-0">Email</th>
+                                    <td class="border-0" style="overflow-wrap: anywhere;">{{mentee.fk_user.email}}</td>
+                                </tr>
+								 <tr>
+                                    <th scope="row" class="border-0">Phone</th>
+                                    <td class="border-0" style="overflow-wrap: anywhere;">{{mentee.contact}}</td>
+                                </tr>
+                               
+
+                        </table>
+                    </center>
+                </div>
+            </div>
+            <div class=" menteeright text-start">
+                <center>
+                   <div>
+				   	<h5>My Goals</h5>
+					   <p> {{mentee.goal}}
+					   </p>
+
+				   </div>
+                </center>
+            </div>
+		</div>
+
+	
+						
+					{% endif %}
+
+
+				{% endfor %}
+					
+
+				{# <a href="/mentorfind" class="btn findmentor"  role="button">Find Mentor</a> #}
+						
+						{# mentor start  #}
+						{% for mentee in mentees %}
+							{% for mentorship in mentorships %}
+								{% for mentor in mentors %}
+									{% if mentorship.fk_mentee.id ==  mentee.id and mentee.fk_user.id == self.id %}
+										{% if mentor.fk_user.id == mentorship.fk_user.id %}
+
+												<h4 class="mymentor">My Mentor</h4>
+											<div class="card rounded bg-white border-0 shadow mt-2 mb-5"   style="max-width: 1000px; margin:auto;">
+												<div class="row g-0">
+													<div class="col-md-3">
+														{% if mentor.picture =="" %}
+															<img src="../../assets/images/profi.png" style="width:100%;">
+														{% else %}
+															<img src="	{{mentor.picture | e}}" alt="{{mentor.username | e}}" class="img-fluid rounded" style="width:100%;"/>
+														{% endif %}
+													</div>
+													<div class="col-md-9 d-flex">
+														<div class="card-body">
+															
+															<div class="middle">
+																<center>
+																	
+																	<table class="table">
+																		<tbody>
+																			<tr>
+																				<th scope="row" class="border-0">Name </th>
+																				<td class="border-0"><b>{{mentor.fk_user.firstname | e}} {{mentor.fk_user.lastname | e}}
+																		</b></td>
+																			</tr>
+																			<tr>
+																				<th scope="row" class="border-0">Country </th>
+																				<td class="border-0">{{mentor.country}}</td>
+																			</tr>
+																			<tr>
+																				<th scope="row" class="border-0">Langage </th>
+																				<td class="border-0">
+																					
+																							{{mentor.languageone}}
+																					        <br>
+																						{% if mentor.languagetwo != " " %}
+																						
+																								{{mentor.languagetwo}}
+																							<br>
+
+																						{% endif %}
+																						{% if mentor.languagethree != " " %}
+																						
+																								{{mentor.languagethree}}
+																							
+																						{% endif %}
+																					
+																				</td>
+																			</tr>
+																			<tr>
+																				<th scope="row" class="border-0">Skills </th>
+																				<td class="border-0">{{mentor.skills | e}}</td>
+																			</tr>
+																			<tr>
+																				<th scope="row" class="border-0">Profession </th>
+																				<td class="border-0">{{mentor.profession | e}}</td>
+																			</tr>
+																			<tr>
+																				<th scope="row" class="border-0">Contact </th>
+																				<td class="border-0" style="overflow-wrap: anywhere;"><i class="bi bi-envelope">
+																						{{mentor.fk_user.email}}</i><br>
+																					<i class="bi bi-whatsapp">{{mentor.contact}}</i></td>
+																			</tr>
+																			
+
+																	</table>
+																</center>
+																
+															</div>
+														</div>
+														<div class="right">
+															<center>
+																<div class="accordion bg-white accordion-flush pe-2 pt-0" id="accordionFlushExample">
+																	<div class="accordion-item">
+																		<h2 class="accordion-header" id="flush-headingOne">
+																			<button class="accordion-button bg-white collapsed pt-0" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+																				<b>Introduction</b>
+																			</button>
+																		</h2>
+																		<div id="flush-collapseOne" class="accordion-collapse bg-white collapse show" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+																			<div class="accordion-body">{{mentor.preofession_description | nl2br}}</div>
+																		</div>
+																	</div>
+																	<div class="accordion-item">
+																		<h2 class="accordion-header" id="flush-headingTwo">
+																			<button class="accordion-button bg-white collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+																				<b>Profession</b>
+																			</button>
+																		</h2>
+																		<div id="flush-collapseTwo" class="accordion-collapse bg-white collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+																			<div class="accordion-body">
+																				{{mentor.mentors_descripton | nl2br}}
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</center>
+														
+														</div>
+														
+															
+															{# <div class="row pb-4 border-bottom border-light">
+																<div class="col-6">
+
+																	<p class="card-text">
+																		<b>{{mentor.fk_user.firstname | e}}
+																			{{mentor.fk_user.lastname | e}}
+																		</b>
+																	</p>
+																	<p class="card-text ps-4">
+																		<b>Profession:</b>
+																		{{mentor.profession | e}}
+																	</p>
+																	<p class="card-text ps-4">
+																		<b>Description:</b>
+																		{{mentor.preofession_description | nl2br}}
+																	</p>
+																	<p class="card-text ps-4">
+																		<b>Skils:</b>
+																		{{mentor.skills | e}}
+																	</p>
+																</div>
+																<div class="col-6">
+																	<p class="card-text ps-4">
+																		<b>Country:</b>
+																		{{mentor.country}}
+																	</p>
+																	<p class="card-text ps-4">
+																		<b>Languages:
+																		</b>
+																		<ul>
+																			<li>
+																				{{mentor.languageone}}
+																			</li>
+																			{% if mentor.languagetwo != " " %}
+																				<li>
+																					{{mentor.languagetwo}}
+																				</li>
+
+																			{% endif %}
+																			{% if mentor.languagethree != " " %}
+																				<li>
+																					{{mentor.languagethree}}
+																				</li>
+
+																			{% endif %}
+																		</ul>
+																	</p>
+																</div>
+															</div> 
+														</div>#}
+														
+
+													</div>
+												</div>
+											</div>
+											{# mentor end  #}
+
+											{# workbook start  #}
+											<h2 class="workbook mt-5 pt-3">My Workbook <i class="bi bi-book"></i></h2>
+											{# <a href="/editmentorship/{{mentorship.id}}" class="btn btn-transparent text-dark workbook-end mb-2">Edit Workbook
+											</a> #}
+											<a href="/editmentorship/{{mentorship.id}}" class="btn findmentor workbook-end mb-4"  role="button">Edit Workbook</a> 
+						
+
+
+											<div class="card border-0 shadow mb-5" style="max-width: 1000px; margin:auto; background-color:; border:2px solid ; border-style: dashed;">
+												<div class="card-header border-0" style="background-color:#FF4966;">
+													<h5 class="card-title head-card mt-0 text-white" >My goals</h5>
+												</div>
+												<div class="card-body p-5" >
+													<p class="card-text">{{mentorship.goal | nl2br}}</p>
+
+												</div>
+											</div>
+
+											<div class="card border-0 shadow mb-5" style="max-width: 1000px; margin:auto; background-color:;">
+												<div class="card-header border-0" style="background-color:#9FD8DF;">
+													<h5 class="card-title head-card mt-0 text-white" >My Steps</h5>
+												</div>
+												<div class="card-body">
+													<p class="card-text">{{mentorship.steps | nl2br}}</p>
+
+												</div>
+											</div>
+
+
+											<div class="card border-0 shadow mb-5" style="max-width: 1000px; margin:auto; background-color:;">
+												<div class="card-header border-0" style="background-color:#FFC764;">
+													<h5 class="card-title head-card mt-0 text-white" >My Achievements</h5>
+												</div>
+												<div class="card-body">
+													<p class="card-text">{{mentorship.achievements| nl2br}}</p>
+
+												</div>
+											</div>
+										</div>
+                                        {# WORKBOOK END  #}
+
+									{% endif %}
+
+
+								{% endif %}
+
+
+							{% endfor %}
+
+
+						{% endfor %}
+
+					{% else %}
+						<p>
+							no record found
+						</p>
+
+					{% endfor %}
+
+				{% else %}
+{# MANTEE END HERE  #}
+
+
+{# MENTOR STARTS HERE  #}
+	{% for mentor in mentors %}
+	{% if mentor.fk_user == self %}
+	{# navbar start  #}
+		<div class="header">
+			<h2 class="mt-2" style="font-size:2rem;  font-family: 'Baloo Bhaijaan 2', cursive;">Mentorship <img src="../../assets/images/logo5.jpg" class="logo-sm" style="height: 40px;"> Without Borders</h2>
+		</div>
+		<input type="checkbox" class="openSidebarMenu" id="openSidebarMenu">
+		<label for="openSidebarMenu" class="sidebarIconToggle">
+			<div class="spinner diagonal part-1"></div>
+			<div class="spinner horizontal"></div>
+			<div class="spinner diagonal part-2"></div>
+		</label>
+		<div id="sidebarMenu">
+			<ul class="sidebarMenuInner">
+				<center>
+					<!-- profile image, name  -->
+					{% for mentee in mentees %}
+					<li>{% endfor %}{{self.firstname}}</li>
+				</center>
+				<div class="limenu">
+					<li>
+						<a href="/home">Home</a>
+					</li>
+					{#      <li><a href="#">Workbook</a></li> #}
+					<li><a href="/creatementorship">Add Mentee</a></li> 
+					{#     <li><a href="/mentoredit">Edit bio</a></li>
+						<li><a href="/mentorcreate">Create bio</a></li> #}
+					<li><a href="/logout"> Log out</a></li>
+				</div>
+			</ul>
+		</div><br><br><br>
+	{# navbar end  #}
+
+
+	<div class="mentormain mb-5">
+		<h4 style="color: #1A936F;" class="animate__animated animate__fadeInDown">My BIO</h4>
+        <!-- my bio start -->
+        <div class="mybio rounded">
+            <div class="leftandmiddle">
+                <div class="menteeleft">
+                    <center>
+						{% if mentor.picture =="" %}
+							<img  src="../../assets/images/profi.png">
+						{% else %}
+							<img src="	{{mentor.picture}}" alt="{{mentor.picture}}" class="img-fluid rounded"/>
+						{% endif %}
+                        <h5 class="mt-2 mb-2">{{self.firstname}}  {{self.lastname}}</h5>
+                        <a  href="/mentoredit/{{mentor.id}}"><button class="btn btn-sm editbtn rounded-circle" type="submit" href="/mentoredit/{{mentor.id}}">
+                        <i class="bi bi-pencil-fill"></i>
+                        </button></a>
+						
+                    </center>
+                </div>
+                <div class="">
+                    <center>
+                        <table class="table menteetable mt-5">
+                            <tbody>
+                                <tr>
+                                    <th scope="row" class="border-0">Country</th>
+                                    <td class="border-0">{{mentor.country}}</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" class="border-0">Langage</th>
+                                    <td class="border-0">
+										
+												{{mentor.languageone}}
+											<br>
+											{% if mentor.languagetwo != " " %}
+										
+												{{mentor.languagetwo}}
+											<br>
+											{% endif %}
+											{% if mentor.languagethree != " " %}
+										
+												{{mentor.languagethree}}
+											
+											{% endif %}
+									
+									</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" class="border-0">Skills</th>
+                                    <td class="border-0">{{mentor.skills}}</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" class="border-0">Profession</th>
+                                    <td class="border-0">{{mentor.profession}}</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" class="border-0">Contact</th>
+                                    <td class="border-0" style="overflow-wrap: anywhere;">{{mentor.contact}}</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" class="border-0">Capacity</th>
+                                    <td class="border-0">{{mentor.capacity}}</td>
+                                </tr>
+
+                        </table>
+                    </center>
+                </div>
+            </div>
+            <div class="mentorright">
+                <center>
+                    <div class="accordion mentoraccordion accordion-flush" id="accordionFlushExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="flush-headingOne">
+                                <button class="accordion-button mentoraccordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                                    Introduction
+                                </button>
+                            </h2>
+                            <div id="flush-collapseOne" class="accordion-collapse mentoraccordion-collapse collapse show" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">{{mentor.mentors_descripton}}</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="flush-headingTwo">
+                                <button class="accordion-button mentoraccordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                                    Plofession
+                                </button>
+                            </h2>
+                            <div id="flush-collapseTwo" class="accordion-collapse mentoraccordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">{{mentor.preofession_description}}</div>
+                            </div>
+                        </div>
+                    </div>
+                </center>
+            </div>
+		</div>
+		<center>
+				<h1 class="fw-boldt">My mentees
+				<a class="btn addmentee ms-3" type="submit" href="/creatementorship">
+					＋ Add Mentee
+				</a>
+				</h1>
+			</center>
+            
+		{% endif %}
+		{% endfor %}
+        <!-- my bio end -->
+
+        <!-- mentee list start-->
+		{% for mentorship in mentorships %}
+		{% for user in users %}
+		{% if user.id == self.id and mentorship.fk_user.id == self.id %}
+										
+        <div class="menteelist">
+			
+			<div class="card rounded bg-white border-0 shadow mt-2 mb-5"   style="max-width: 1000px; margin:auto;">
+				<div class="row g-0">
+					<div class="col-md-3">
+						{% if mentorship.fk_mentee.picture =="" %}
+							<img src="../../assets/images/profi.png" class="w-100">
+						{% else %}
+							<img src="	{{mentorship.fk_mentee.picture | e}}" alt="{{mentorship.fk_mentee.username   | e}}" class="img-fluid rounded"/>
+						{% endif %}
+					</div>
+					<div class="col-md-9 d-flex">
+						<div class="card-body">
+							
+							<div class="middle">
+								<center>
+									
+									<table class="table">
+										<tbody>
+											<tr>
+												<th scope="row" class="border-0">Name </th>
+												<td class="border-0"><b>{{mentorship.fk_mentee.username | e}}</b></td>
+											</tr>
+											<tr>
+												<th scope="row" class="border-0">Skills </th>
+												<td class="border-0">{{mentorship.fk_mentee.skills | e}}</td>
+											</tr>
+											<tr>
+												<th scope="row" class="border-0">Profession </th>
+												<td class="border-0">{{mentorship.fk_mentee.profession | e}}</td>
+											</tr>
+											<tr>
+												<th scope="row" class="border-0">Education </th>
+												<td class="border-0">{{mentorship.fk_mentee.Education | e}}</td>
+											</tr>
+											<tr>
+												<th scope="row" class="border-0">Contact </th>
+												<td class="border-0" style="overflow-wrap: anywhere;"><i class="bi bi-envelope">
+														{{mentorship.fk_mentee.fk_user.email}}</i><br>
+													<i class="bi bi-whatsapp">{{mentorship.fk_mentee.contact}}</i></td>
+											</tr>
+											
+
+									</table>
+									<a href="/editmentorship/{{mentorship.id}}" class="btn btn-transparent work-btn mb-2 mt-2 me-2">Edit Workbook
+									</a>
+
+									<a href="/mentorshipdetails/{{mentorship.id}}" class="btn btn-transparent work-btn mb-2 mt-2">Show Workbook
+									</a>
+						
+								</center>
+								
+							</div>
+						</div>
+						<div class="right">
+						
+								
+								<p class="pt-4"><b>Profession description</b><p>
+								<p>{{mentorship.fk_mentee.profession_description| nl2br}}</p>
+								<h4><b>Personal Goal</b><h4>
+								<p>{{mentorship.fk_mentee.goal | nl2br}}</p>
+								{# <div class="accordion bg-white accordion-flush pe-2 pt-0" id="accordionFlushExample">
+									<div class="accordion-item">
+										<h2 class="accordion-header" id="flush-headingOne">
+											<button class="accordion-button bg-white collapsed pt-0" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+												<b>GOAL</b>
+											</button>
+										</h2>
+										<div id="flush-collapseOne" class="accordion-collapse bg-white collapse show" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+											<div class="accordion-body">{{mentorship.fk_mentee.goal | nl2br}}</div>
+										</div>
+									</div>
+									<div class="accordion-item">
+										<h2 class="accordion-header" id="flush-headingTwo">
+											<button class="accordion-button bg-white collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+												<b>Plofession</b>
+											</button>
+										</h2>
+										<div id="flush-collapseTwo" class="accordion-collapse bg-white collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+											<div class="accordion-body">
+												{{mentorship.fk_mentee.profession_description| nl2br}}
+											</div>
+										</div>
+									</div>
+								</div> #}
+							
+							
+						</div>
+					</div>
+				</div>
+			</div>
+        </div>
+        <!-- mentee list end -->
+		{% endif %}
+	{% endfor %}										
+	{% endfor %}	
+	{% endif %}
+	</div>
+
+
+	{% else %}
+		<div class="container" style="height:75vh;">
+		<center>
+		<h3>
+			Not approved for mentorship program.
+		</h3>
+		<img  src="../../assets/images/notapproved.png" style="height:40vh;"> 
+		<br>
+		<a class="btn" href="/logout" style="background-color:#88D498;">
+			LOG OUT
+		</a>
+		</center>
+		</div>
+	{% endif %}
+
+
+{# old version  #}
+
+	{# <div class="container m-auto">
+		<h2 class="head-card">Hello
+			 !
+			
+		</h2>
+							<a class="icon-col" href="/mentoredit/{{mentor.id}}">
+								<i class="bi bi-pencil-square"></i>
+							</a> #}
+	{# 						
+					<a class="icon-col" href="/mentorcreate">
+						<i class="bi bi-plus-circle"></i>
+					</a>
+
+							{% for mentorship in mentorships %}
+								{% for user in users %}
+									{% if user.id == self.id and mentorship.fk_user.id == self.id %}
+										
+										<a href="/editmentorship/{{mentorship.id}}" class="btn btn-success d-none">Edit Workbook
+										</a>
+
+										<div class="card mb-3 shadow-lg rounded bg-dark text-light" style="max-width: 1000px; ">
+											<div class="row g-0">
+												<div class="col-md-4">
+													{% if mentorship.fk_mentee.picture =="" %}
+														<img src="https://image.shutterstock.com/image-vector/no-user-profile-picture-hand-260nw-99335579.jpg">
+													{% else %}
+														<img src="	{{mentorship.fk_mentee.picture | e}}" alt="{{mentorship.fk_mentee.username   | e}}" class="img-fluid rounded"/>
+													{% endif %}
+												</div>
+												<div class="col-md-8">
+													<div class="card-body">
+														<h5 class="card-title head-card">{{mentorship.fk_mentee.username | e}}</h5>
+														<div class="row pb-4 border-bottom border-light">
+															<div class="col-6">
+																<p class="card-text ps-4">
+																	<b>Profession:</b>
+																	{{mentorship.fk_mentee.profession | e}}
+																</p>
+																<p class="card-text ps-4">
+																	<b>Description:</b>
+																	{{mentorship.fk_mentee.profession_description| nl2br}}
+																</p>
+																<p class="card-text ps-4">
+																	<b>Education:</b>
+																	{{mentorship.fk_mentee.Education | e}}
+																</p>
+																<p class="card-text ps-4">
+																	<b>Skils:</b>
+																	{{mentorship.fk_mentee.skills | e}}
+																</p>
+															</div>
+														<div class="col-6">
+																<p class="card-text ps-4">
+																	<b>Personal Goals:</b>
+																	{{mentorship.fk_mentee.goal | nl2br}}
+																</p>
+														</div>
+													
+														<div class="row pb-4 pt-4 border-bottom border-light">
+															<div>
+																<b>
+																	Contact Info:
+																</b>
+																<i class="bi bi-envelope">
+																	{{mentorship.fk_mentee.fk_user.email}}</i>
+																<i class="bi bi-whatsapp">{{mentorship.fk_mentee.contact}}</i>
+															</div>
+															
+														</div> 
+												<div>
+												<a href="/editmentorship/{{mentorship.id}}" class="btn btn-transparent text-dark work-btn mb-2 mt-2">Edit Workbook
+												</a>
+
+												<a href="/mentorshipdetails/{{mentorship.id}}" class="btn btn-transparent text-dark work-btn mb-2 mt-2">Show Workbook
+												</a>
+											</div>
+													
+										
+										
+													{% endif %}
+										</div>
+												{% endfor %}
+
+											
+											{% endfor %}
+
+										
+										{% endif %}
+									
+
+									{% else %}
+										<h2>
+											Not approved for mentorship programm
+										</h2>
+									{% endif %}
+
+								</body> #}
+{% endblock %}

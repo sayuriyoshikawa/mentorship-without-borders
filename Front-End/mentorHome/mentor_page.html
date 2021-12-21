@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- bootstrap  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400;500;700;800&display=swap');
+
+        body {
+            color: #114B5F;
+            background-color: #F3E9D2;
+            font-family: 'Baloo Bhaijaan 2', cursive;
+        }
+
+        .main {
+            width: 90vw;
+            min-width: 300px;
+            height: 100%;
+            margin: auto;
+            padding-top: 50px;
+        }
+
+        /* mybio  */
+        .mybio {
+            margin: auto;
+            width: 100%;
+            display: flex;
+            padding: 10px;
+            border: solid 8px white;
+        }
+
+        .leftandmiddle {
+            display: flex;
+        }
+
+        .mentorleft {
+            width: 40%;
+            margin: auto;
+        }
+
+        .mentormiddle {
+            width: 60%;
+            margin: auto;
+        }
+
+        .mentorright {
+            width: 60%;
+            margin-top: 0;
+        }
+
+        .editbtn {
+            color: white;
+            background-color: #88D498;
+            width: 35px;
+            height: 35px;
+            margin: auto;
+        }
+
+        .mybio img {
+            width: 70%;
+            margin: auto;
+        }
+
+        .mentortable {
+            width: 17%;
+            color: #114B5F;
+        }
+
+        .accordion {
+            width: 90%;
+            color: #114B5F;
+        }
+
+        .accordion-button,
+        .accordion-collapse {
+            background-color: #F3E9D2;
+            color: #114B5F;
+        }
+
+        /* menteelist */
+        .menteelist {
+            margin-top: 50px;
+        }
+
+        .menteelist h1 {
+            color: #1A936F;
+            font-size: 4rem;
+        }
+
+        .bio {
+            height: 100%;
+        }
+
+        .bio img {
+            overflow: hidden;
+            height: 11vw;
+            min-height: 100px;
+            margin-left: 2rem;
+        }
+
+        .bio h4 {
+            text-align: center;
+        }
+        .addmentee {
+            color: white;
+            background-color: #1A936F;
+        }
+
+        .menteeinfo {
+            height: 70%;
+        }
+
+        .contactbtn {
+            width: 90%;
+            background-color: #FDB443;
+            color: white;
+            margin-left: 10px;
+        }
+
+        @media screen and (max-width:768px) {
+            .mybio {
+                margin: auto;
+                width: 100%;
+                display: block;
+            }
+
+            .mentorleft {
+                width: 35%;
+                margin: auto;
+            }
+
+            .mentormiddle {
+                width: 65%;
+                margin: auto;
+            }
+
+            .mentorright {
+                width: 100%;
+                margin-top: 0;
+            }
+        }
+
+        @media screen and (max-width:425px) {
+            .mybio {
+                display: block;
+            }
+
+            .leftandmiddle {
+                display: block;
+            }
+
+            .mentorleft {
+                width: 70%;
+                margin: auto;
+                padding-bottom: 10px;
+            }
+
+            .mentormiddle {
+                width: 100%;
+                margin: auto;
+            }
+
+            .mentorright {
+                width: 100%;
+                margin-top: 0;
+            }
+
+            .mybio img {
+                width: 70%;
+                margin: auto;
+            }
+
+            .mentortable {
+                width: 17%;
+                color: #114B5F;
+            }
+
+            .accordion {
+                width: 90%;
+                color: #114B5F;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+
+        <!-- my bio start -->
+        <div class="mybio rounded">
+            <div class="leftandmiddle">
+                <div class="left">
+                    <center>
+                        <img src="picture/profi.png" alt="">
+                        <h5 class="mt-2 mb-2">Name</h5>
+                        <button class="btn btn-sm editbtn rounded-circle" type="submit">
+                        <i class="bi bi-pencil-fill"></i>
+                        </button>
+                    </center>
+                </div>
+                <div class="middle">
+                    <center>
+                        <table class="table">
+                            <tbody>
+                                <tr>
+                                    <th scope="row" class="border-0">Country</th>
+                                    <td class="border-0">Austria</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" class="border-0">Langage</th>
+                                    <td class="border-0">German</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" class="border-0">Skills</th>
+                                    <td class="border-0">Programming</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" class="border-0">Profession</th>
+                                    <td class="border-0">Engineer</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" class="border-0">Contact</th>
+                                    <td class="border-0" style="overflow-wrap: anywhere;">mentor@mail.com</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" class="border-0">Capacity</th>
+                                    <td class="border-0">Avalable</td>
+                                </tr>
+
+                        </table>
+                    </center>
+                </div>
+            </div>
+            <div class="right">
+                <center>
+                    <div class="accordion accordion-flush" id="accordionFlushExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="flush-headingOne">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                                    Introduce
+                                </button>
+                            </h2>
+                            <div id="flush-collapseOne" class="accordion-collapse collapse show" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">I am reliable conscientious and dedicated. I am open minded and tolerant of all customs, values and traditions. I am patient and polite and do not mind working through things in a caring encouraging way with students.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="flush-headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                                    Plofession
+                                </button>
+                            </h2>
+                            <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">Profession description</h6>
+                                    <p>I strive to be prompt and efficient in my teaching methods. I also like to remain approachable. I do not want to make my students feel that I am judgmental or critical rather that i am encouraging and supportive.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </center>
+            </div>
+        </div>
+        <!-- my bio end -->
+
+        <!-- mentee list start-->
+        <div class="menteelist">
+            <h1 class="fw-bold">Your mentee <a class="btn addmentee ms-3" type="submit">
+                ＋ Add Mentee
+            </a></h1>
+            
+            <div class="card mb-4 mentorbio border-0">
+                <div class="row g-0 bio">
+                    <div class="col-lg-3 col-md-3 bioleft">
+                        <img src="picture/test.png" class="img-fluid rounded-start" alt="...">
+                        <h4>Name</h4>
+                    </div>
+                    <div class="col-lg-9 col-md-9">
+                        <div class="card-body menteeinfo">
+                            <h5 class="card-title">Bio</h5>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        </div>
+                        <a class="btn contactbtn" href="#" role="button">Contact now!</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- mentee list end -->
+
+    </div>
+
+
+    <!-- bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>

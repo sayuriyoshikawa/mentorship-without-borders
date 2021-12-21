@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+
+
+{% block body %}
+<h1>User-Data: </h2>
+<ul>
+ <li> {{user.email}}</li>
+ <li> {{user.firstname}} {{user.lastname}}</li>
+
+ <li> {{user.mentormantee}}</li>
+ </ul>
+{% for mentor in mentors %}
+
+
+
+
+{% if mentor.fk_user.id == user.id %}
+  <h1> Mentor-Profile: </h1>
+  <ul>
+					<li>
+						{{mentor.profession}}
+					</li>
+					<li>
+						{{mentor.skills}}
+					</li>
+					<li>
+						{{mentor.languages}}
+					</li>
+				<li>
+						{{mentor.contact}}
+					</li>
+					<li>
+						{{mentor.country}}
+					</li>
+					<li>
+						{{mentor.capacity}}
+					</li>
+
+{% endif %}
+
+
+
+{% endfor %}
+{% endblock %}

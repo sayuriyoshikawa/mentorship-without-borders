@@ -1,0 +1,257 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+	<style>
+
+		html,
+		body {
+			overflow-x: hidden;
+			height: 100%;
+		}
+
+		body {
+			background-color: #F3E9D2;
+			padding: 0;
+			margin: 0;
+			font-family: 'Varela Round', sans-serif;
+		}
+		.container{
+			height: 65vh;
+		}
+
+		.work-btn {
+			background-color: #88D498;
+			color: black !important;
+			height:5%;
+		}
+
+		/* navbar style start  */
+		.header {
+			display: block;
+			margin: 0 auto;
+			width: 100%;
+			max-width: 100%;
+			box-shadow: none;
+			background-color: #114B5F;
+			position: fixed;
+			height: 60px !important;
+			overflow: hidden;
+			z-index: 10;
+		}
+		.header h2 {
+			text-align: center;
+			margin-top: 15px;
+			color: white;
+		}
+
+		.main {
+			margin: 60px auto 0;
+			display: block;
+			height: 100%;
+		}
+
+		.mainInner {
+			display: table;
+			height: 100%;
+			width: 100%;
+			text-align: center;
+		}
+
+		.mainInner div {
+			display: table-cell;
+			vertical-align: middle;
+			font-size: 3em;
+			font-weight: bold;
+			letter-spacing: 1.25px;
+		}
+
+		#sidebarMenu {
+			height: 100%;
+			position: fixed;
+			left: 0;
+			width: 250px;
+			margin-top: 60px;
+			transform: translateX(-250px);
+			transition: transform 250ms ease-in-out;
+			background: #Fff;
+			z-index: 100;
+		}
+
+		.sidebarMenuInner {
+			margin: 0;
+			padding: 0;
+			border-top: 1px solid rgba(255, 255, 255, 0.10);
+		}
+
+		.sidebarMenuInner li {
+			list-style: none;
+			color: #114B5F;
+			text-transform: uppercase;
+			font-weight: bold;
+			padding: 20px;
+			cursor: pointer;
+			border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+		}
+
+		.limenu li:hover {
+			background-color: #F3E9D2;
+		}
+
+		.sidebarMenuInner li span {
+			display: block;
+			font-size: 14px;
+			color: rgba(255, 255, 255, 0.50);
+		}
+
+		.sidebarMenuInner li a {
+			color: #114B5F;
+			text-transform: uppercase;
+			font-weight: bold;
+			cursor: pointer;
+			text-decoration: none;
+		}
+
+		input[type="checkbox"]:checked~#sidebarMenu {
+			transform: translateX(0);
+		}
+
+		input[type=checkbox] {
+			transition: all 0.3s;
+			box-sizing: border-box;
+			display: none;
+		}
+
+		.sidebarIconToggle {
+			transition: all 0.3s;
+			box-sizing: border-box;
+			cursor: pointer;
+			position: absolute;
+			z-index: 99;
+			height: 100%;
+			width: 100%;
+			top: 22px;
+			left: 15px;
+			height: 22px;
+			width: 22px;
+		}
+
+		.spinner {
+			transition: all 0.3s;
+			box-sizing: border-box;
+			position: absolute;
+			height: 3px;
+			width: 100%;
+			background-color: #fff;
+		}
+
+		.horizontal {
+			transition: all 0.3s;
+			box-sizing: border-box;
+			position: relative;
+			float: left;
+			margin-top: 3px;
+		}
+
+		.diagonal.part-1 {
+			position: relative;
+			transition: all 0.3s;
+			box-sizing: border-box;
+			float: left;
+		}
+
+		.diagonal.part-2 {
+			transition: all 0.3s;
+			box-sizing: border-box;
+			position: relative;
+			float: left;
+			margin-top: 3px;
+		}
+
+		input[type=checkbox]:checked~.sidebarIconToggle > .horizontal {
+			transition: all 0.3s;
+			box-sizing: border-box;
+			opacity: 0;
+		}
+
+		input[type=checkbox]:checked~.sidebarIconToggle > .diagonal.part-1 {
+			transition: all 0.3s;
+			box-sizing: border-box;
+			transform: rotate(135deg);
+			margin-top: 8px;
+		}
+
+		input[type=checkbox]:checked~.sidebarIconToggle > .diagonal.part-2 {
+			transition: all 0.3s;
+			box-sizing: border-box;
+			transform: rotate(-135deg);
+			margin-top: -9px;
+		}
+
+		.sidebarMenuInner img {
+			width: 80%;
+			margin: auto;
+		}
+	/* nabvar style end  */
+	h1, h2, h3, h4, h5, h6, label, .form-control {
+			 font-family: 'Baloo Bhaijaan 2', cursive;
+		}
+		 @media screen and (max-width:486px) {
+			 .header h2 {
+                font-size:5vw!important;
+			 }
+		 }
+	</style>
+
+	{# navbar start  #}
+		<div class="header">
+			<h2 class="mt-2" style="font-size:2rem;  font-family: 'Baloo Bhaijaan 2', cursive;">Mentorship <img src="../../assets/images/logo5.jpg" class="logo-sm" style="height: 40px;"> Without Borders</h2>
+		</div>
+		<input type="checkbox" class="openSidebarMenu" id="openSidebarMenu">
+		<label for="openSidebarMenu" class="sidebarIconToggle">
+			<div class="spinner diagonal part-1"></div>
+			<div class="spinner horizontal"></div>
+			<div class="spinner diagonal part-2"></div>
+		</label>
+		<div id="sidebarMenu">
+			<ul class="sidebarMenuInner">
+				<center>
+					<!-- profile image, name  -->
+				
+					
+				</center>
+				<div class="limenu">
+					<li>
+						<a href="/home">Home</a>
+					</li>
+					{#      <li><a href="#">Workbook</a></li> #}
+					{# <li><a href="/creatementorship">Add Mentor</a></li>  #}
+					{#     <li><a href="/mentoredit">Edit bio</a></li>
+						<li><a href="/mentorcreate">Create bio</a></li> #}
+					<li><a href="/logout"> Log out</a></li>
+				</div>
+			</ul>
+		</div><br><br><br>
+
+	<div class="container mb-5">
+
+		<div class="row mt-5">
+			<h3 class="page-header col-10"><b>Add Mentee</b></h3>
+			<a href="/home" class="btn text-dark work-btn ms-5 col-1">Back
+			</a>
+		</div>
+
+
+		<div class="form">
+			{{ form_start(form) }}
+
+			{{ form_widget(form) }}
+
+			{{ form_end(form) }}
+
+
+		</div>
+	</div>
+	<div>
+
+	{% endblock %}

@@ -1,0 +1,284 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mentorship without Borders!
+{% endblock %}
+
+{% block body %}
+
+	<style>
+		 @import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan + 2:wght@400;500;700;800 &display=swap');
+		.navbar {
+			background-color: #114B5F;
+			font-family: 'Baloo Bhaijaan 2', cursive;
+		}
+		.right {
+			position: absolute;
+			right: 0;
+		}
+		 h1, h2, h3, h4, h5, h6 {
+			 font-family: 'Baloo Bhaijaan 2', cursive;
+		}
+
+		@media(min-width: 768px) {
+			.center {
+				position: absolute;
+				width: auto;
+				left: 50%;
+				top: 5px;
+				transform: translateX(-45%);
+				text-align: center;
+			}
+		}
+		@media(max-width: 991px) {
+			.right {
+				position: unset;
+				padding: 8px 0 8px 24px;
+			}
+		}
+		@media(max-width: 767px) {
+			.center {
+				position: absolute;
+				width: auto;
+				left: 50%;
+				top: 5px;
+				transform: translateX(-50%);
+				text-align: center;
+			}
+              h2 {
+			font-size:2em;
+		}
+         h3 {
+			font-size:2em;
+		}
+			@media(max-width: 374px) {
+				.center {
+					position: absolute;
+					width: auto;
+					left: 65%;
+					top: 8px;
+					transform: translateX(-60%);
+					text-align: center;
+					font-size: 1.1rem;
+				}
+                h2 {
+			font-size:1.2em;
+		}
+        h3 {
+			font-size:1.2em;
+		}
+			}
+		}
+
+
+		body {
+			background-color: #F3E9D2;
+			color: #114B5F;
+			/*font-family: Baloo Bhaijaan; */
+		}
+
+		.partnerHeading {
+			font-size: 5em;
+			font-weight: 800;
+			color: #1a936f !important;
+		}
+
+		hr {
+			color: black;
+			opacity: 10;
+			background-color: black;
+			border: none;
+			height: 10px;
+		}
+
+		.headerPic {
+			width: 40%;
+            margin-bottom:-3%;
+			
+		}
+		.joinUS {
+			padding: 50% 0 0;
+			font-family: Baloo Bhaijaan !important;
+		}
+
+		.paddo {
+			padding: 10% 0 0;
+		}
+		.buttono {
+			background-color: #E58525 !important;
+			
+		}
+		.buttono:hover {
+transform: matrix(1.05, 0, 0, 1.05, 0, 0);
+
+}
+
+		h2 {
+			color: #1a936f !important;
+		}
+
+		.partnerIntro {
+			padding: 0 10%;
+		}
+
+		.demo-card-square.mdl-card {
+			width: 15rem;
+			height: 15rem;
+		}
+
+		.demo-card-square > .mdl-card__title {
+			color: #fff;
+			background: url('../assets/demos/dog.png') bottom right 15% no-repeat #46B6AC;
+		}
+
+		img {
+			width: 14rem;
+		}
+
+		.specImg {
+			width: 9rem !important;
+		}
+
+		.partn:hover {
+			transform: matrix(1.05, 0, 0, 1.05, 0, 0);
+			transition-duration: 0.5s;
+		}
+		/* navbar logo  */
+        .logo-sm {
+            width:43px;
+            height:40px;
+        }@media (max-width: 374px){
+            .logo-sm {
+            width:38px;
+            height:35px;
+            }
+            .navbar-brand {
+                margin-top:0!important;
+                font-size:1.2rem!important;
+            }
+        }
+	</style>
+
+
+	<nav class="navbar navbar-expand-lg navbar-light">
+
+		<a class="navbar-brand center text-white" href="#" style="font-size:1.5rem;">Mentorship <img src="../../assets/images/logo5.jpg" class="logo-sm"> Without Borders</a>
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav">
+				<li class="nav-item">
+					<a class="nav-link ps-4 text-white" aria-current="page" href="/" style="font-size:1.2rem;">Home</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link ps-4 text-white" href="/partners" style="font-size:1.2rem;">Partners</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link ps-4 text-white" href="/blog" style="font-size:1.2rem;">Blog</a>
+				</li>
+
+				<div class="navbar-nav right">
+					<li class="nav-item">
+						<a class="nav-link pe-4 text-white" aria-current="page" href="/register" style="font-size:1.2rem;">Join us</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link pe-4 text-white" href="/login" style="font-size:1.2rem;">Login</a>
+					</li>
+				</div>
+			</ul>
+		</div>
+
+	</nav>
+	<!-- header start -->
+
+	<header class="mt-3">
+		<div class="text-center">
+
+			<img class="headerPic col-12 col-md-5 animate__animated animate__zoomIn" src="../../assets/images/5236.png" alt="Mentoring">
+			<h3 class="animate__animated animate__zoomIn">Start your Mentorship today!</h3>
+            <a href="../registration/register.html.twig">
+				<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent px-5 buttono animate__animated animate__zoomIn">
+					Join us now
+				</button>
+			</a>
+		</div>
+	</header>
+	
+        <hr class="container mt-5">
+	<!-- header end -->
+
+	<!-- partner start-->
+		<div class="container mt-5"> <h2 class=" mt-5 fw-bold partnerIntro">Our Partners</h2>
+		<div
+			class="partnerIntro ">
+			<!-- class="fs-4" can be deleted if used google font is working, because on my laptop it wasn't working-->
+			<p>We are collaborating with voluntary organisations focused on education from all over the world, teaching our students our very simple yet extremely effective method for developing a true long-lasting passion for any field that they choose
+				                to pursue. After 2-3 months of practicing it, our mentees can teach this method themselves inside their own and other organisations.</p>
+			<p>
+				A very warm thank you to all of our partners, we wouldn't be able to do much without your help:</p>
+		</div>
+		
+		<div class=" row row-cols-1 row-cols-md-3 p-5">
+
+			<a href="https://www.hope-found.org/de">
+				<div class="partn col-12 col-md-4 col-lg-4 mb-4 ms-4 rounded demo-card-square mdl-card mdl-shadow--2dp justify-content-center align-items-center">
+					<img src="https://mentorswithoutborders.net/images/partners/HOPE-Foundation.png" alt="HOPE-Foundation">
+				</div>
+			</a>
+			<a href="https://www.sos-childrensvillages.org/">
+				<div class="partn col-12 col-md-4 col-lg-4 mb-4 ms-4 rounded demo-card-square mdl-card mdl-shadow--2dp justify-content-center align-items-center">
+					<img src="https://mentorswithoutborders.net/images/partners/SOS-Childrens-Villages.png" alt="SOS-Childrens-Villages">
+
+				</div>
+			</a>
+			<a href="http://www.si4dev.org/">
+				<div class="partn col-12 col-md-4 col-lg-4 mb-4 ms-4 rounded demo-card-square mdl-card mdl-shadow--2dp justify-content-center align-items-center">
+					<img src="https://mentorswithoutborders.net/images/partners/SI4DEV.png" alt="SI4DEV">
+
+				</div>
+			</a>
+			<a href="https://www.herowomenrising.org/">
+				<div class="partn col-12 col-md-4 col-lg-4 mb-4 ms-4 rounded demo-card-square mdl-card mdl-shadow--2dp justify-content-center align-items-center">
+					<img src="https://mentorswithoutborders.net/images/partners/Hero-Women-Rising.png" alt="Hero-Women-Rising">
+
+				</div>
+			</a>
+			<a href="https://solveeducation.org/">
+				<div class="partn col-12 col-md-4 col-lg-4 mb-4 ms-4 rounded demo-card-square mdl-card mdl-shadow--2dp justify-content-center align-items-center">
+					<img src="https://mentorswithoutborders.net/images/partners/Solve-Education.png" alt="Solve-Education">
+
+				</div>
+			</a>
+			<a href="https://www.fundlife.org/">
+				<div class="partn col-12 col-md-4 col-lg-4 mb-4 ms-4 rounded demo-card-square mdl-card mdl-shadow--2dp justify-content-center align-items-center">
+					<img src="https://mentorswithoutborders.net/images/partners/FundLife-International.png" alt="FundLife-International">
+
+				</div>
+			</a>
+			<a href="https://literacyindia.org/">
+				<div class="partn col-12 col-md-4 col-lg-4 mb-4 ms-4 rounded demo-card-square mdl-card mdl-shadow--2dp justify-content-center align-items-center">
+					<img class="specImg" src="https://mentorswithoutborders.net/images/partners/Literacy-India.png" alt="Literacy-India">
+
+				</div>
+			</a>
+			<a href="https://educationforallchildren.org/">
+				<div class="partn col-12 col-md-4 col-lg-4 mb-4 ms-4 rounded demo-card-square mdl-card mdl-shadow--2dp justify-content-center align-items-center">
+					<img src="https://mentorswithoutborders.net/images/partners/Education-for-All-Children.png" alt="Education-for-All-Children">
+
+				</div>
+			</a>
+			<a href="https://www.railwaychildren.org.uk/">
+				<div class="partn col-12 col-md-4 col-lg-4 mb-4 ms-4 rounded demo-card-square mdl-card mdl-shadow--2dp justify-content-center align-items-center">
+					<img src="https://mentorswithoutborders.net/images/partners/Railway-Children.png" alt="Railway-Children">
+
+				</div>
+			</a>
+		</div>
+	</div>
+	<!-- partner end-->
+
+	<!--here goes the footer-->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+	<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+
+{% endblock %}

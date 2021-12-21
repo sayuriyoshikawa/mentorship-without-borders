@@ -1,0 +1,505 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mentorship without Borders!{% endblock %}
+
+{% block body %}
+
+   <style>
+
+body {
+    background-color: #F3E9D2;
+    color: #114B5F;
+    /* font-family: Baloo Bhaijaan; */
+}
+  h1, h2, h3, h4, h5, h6 {
+			 font-family: 'Baloo Bhaijaan 2', cursive;
+		}
+.partnerHeading {
+    font-size: 5em;
+    font-weight: 800;
+    color: #1a936f !important;
+}
+
+hr {
+    color: black;
+    opacity: 10;
+    background-color: black;
+    border: none;
+    height: 10px;
+}
+
+
+/* header {
+    background-image: url('pix/mentor.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 50vh;
+} */
+
+h4 {
+    padding: 40% 0% 10% 10%;
+}
+
+/* swipeeeeeeeeeeeeeeeeeer */
+
+.swiper {
+    width: 70%;
+    height: 80%;
+    font-family: 'Baloo Bhaijaan 2', cursive;
+}
+
+.swiper-slide {
+    padding: 10%;
+    font-family: 'Baloo Bhaijaan 2', cursive;
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    /* Center slide text vertically */
+    /* display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex; */
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    
+}
+
+.swiper-button-next{
+    color:#88d498;
+}
+
+.swiper-button-prev{
+    color:#88d598;
+}
+/* .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+} */
+
+.swiper {
+    margin-left: auto;
+    margin-right: auto;
+}
+.buttono {
+    background-color: #88D489 !important;
+}
+.buttoni{
+    background-color: #E58525 !important;
+}
+.imgHead{
+    margin-left:5%;
+    margin-right:-5%;
+}
+.mentorHead{
+    padding: 8% 0% 0% 10%;
+}
+
+.buttHead{
+    padding:10.5% 0% 0% 5%;
+}
+.demo-card-wide.mdl-card {
+  width: 50% ;
+  margin:auto ;
+  
+/*   background-color: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;  */
+}
+.demo-card-wide > .mdl-card__title {
+  color: #fff !important;
+  height:40vh !important;
+ /*background-color: rgb(255,255,255,0.7); */
+}
+.demo-card-wide > .mdl-card__menu {
+  color: #fff !important;
+   
+} 
+.mdl-card__supporting-text{
+    background-color:#fff;
+}
+.mdl-card__title-text{
+    margin-bottom:-5%;
+    margin-left:-3%;
+    padding: 2%;
+  color:#fff;
+  font-weight:bold;
+  background-color: rgb(0,0,0,0.3);
+ 
+ 
+}
+h2{
+    color:#1a936f;
+}
+
+.logoPart{
+    width:15%;
+    margin-right:5%;
+}
+.specImg{
+    width:4%;
+    margin-right:5%;
+}
+.logoSpec{
+    width:7%;
+    margin-right:5%;
+}
+
+
+marquee{
+    background-color:#fff;
+}
+ .buttRight{
+    margin-left:-5%;
+} 
+.butt:hover {
+transform: matrix(1.05, 0, 0, 1.05, 0, 0);
+
+}
+
+.columnText{
+    margin-top:35%;
+
+}
+
+.HeaderIMG {
+    width:90%;
+}
+     
+        .navbar {
+            background-color: #114B5F;
+             font-family: 'Baloo Bhaijaan 2', cursive;
+        }
+        .right {
+            position: absolute;
+            right: 0%;
+        }
+
+        @media (max-width: 1199px){
+        
+
+        }
+        
+         @media (max-width: 989px){
+         
+        } 
+
+        @media (max-width: 573px){
+            
+        }
+
+        @media (min-width: 768px) {
+            .center {
+                position: absolute;
+                width: auto;
+                left: 50%;
+                top: 5px;
+                transform: translateX(-45%);
+                text-align: center;
+            }
+        }
+        @media (max-width: 991px) {
+            .right {
+            position:unset;
+            padding: 8px 0px 8px 24px;
+        }
+        } 
+        @media (max-width: 767px) {
+            .center {
+                position: absolute;
+                width: auto;
+                left: 50%;
+                top: 5px;
+                transform: translateX(-50%);
+                text-align: center;
+            }
+            @media (max-width: 374px){
+                .center {
+                position: absolute;
+                width: auto;
+                left: 65%;
+                top: 8px;
+                transform: translateX(-60%);
+                text-align: center;
+                font-size: 1.1rem;
+            }
+            }
+        }
+        /* navbar logo  */
+        .logo-sm {
+            width:43px;
+            height:40px;
+        }@media (max-width: 374px){
+            .logo-sm {
+            width:38px;
+            height:35px;
+            }
+            .navbar-brand {
+                margin-top:0!important;
+                font-size:1.2rem!important;
+            }
+        }
+    </style>
+
+
+
+  <nav class="navbar navbar-expand-lg navbar-light">
+
+        <a class="navbar-brand center text-white" href="#" style="font-size:1.5rem;">Mentorship <img src="../../assets/images/logo5.jpg" class="logo-sm"> Without Borders</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link ps-4 text-white" aria-current="page" href="/" style="font-size:1.2rem;">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link ps-4 text-white" href="/partners" style="font-size:1.2rem;">Partners</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link ps-4 text-white" href="/blog" style="font-size:1.2rem;">Blog</a>
+                </li>
+            
+            <div class="navbar-nav right">
+                <li class="nav-item">
+                    <a class="nav-link pe-4 text-white" aria-current="page" href="/register" style="font-size:1.2rem;">Join us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link pe-4 text-white" href="/login" style="font-size:1.2rem;">Login</a>
+                </li>
+            </div>
+            </ul>
+        </div>
+
+    </nav>
+ <header>
+         <header class="container">
+        <div class="row cow-cols-1 row-cols-md-3 row-cols-lg-3 my-5">
+            <div class="col-0 col-md-3 col-lg-3">
+
+            </div>
+            <div class=" col-12 col-md-6 cold-lg-6"><img class="HeaderIMG animate__animated animate__flipInY" src="../../assets/images/Planet.png" alt="Mentor with Mentee online" ></div>
+            <div class="col-12 col-sm-12 col-md-12 col-lg-4">
+                <h3 class="columnText animate__animated animate__zoomIn">Start your Mentorship today!</h3>
+                  <a class="buttRight" href="/register"><button class="animate__animated animate__zoomIn px-5 butt buttoni mdl-button mdl-js-button mdl-button--raised mdl-button--accent ms-4">
+                    Join us now
+                  </button></a></div>
+
+        </div>
+        <hr style="color: black;
+        opacity: 10;
+        background-color: black;
+        border: none;
+        height: 2px;">
+    </header>
+    <!-- header end -->
+    
+    <!-- header end -->
+    <!-- blog start-->
+<h2 class="text-center my-5 fw-bold">Blog & News</h2>
+<div class="container">
+       <div class="demo-card-wide mdl-card mdl-shadow--2dp shadow" style="background: url('../assets/images/RafaelReal.jpg') center / cover; opacity:0.9;">
+  <div class="mdl-card__title">
+    <h2 class="mdl-card__title-text">New mentor joins: Who is Rafael Perry?</h2>
+  </div>
+  <div class="mdl-card__supporting-text">
+Let’s meet our new mentor, Rafael Perry! Rafael joined our platform in October after seeing the mentorship benefits for other people in our company. Being a senior in his team, he knows his valuable experience and do a lot of good even outside of the company...
+{# Here’s Rafael’s Bio: My 10 year experience in payroll and accounting has been appreciated by many big name brands, as I turn this number’s game intro science by mixing in modern technology. My profession is payroll technician; a payroll technician performs a range of complex duties to ensure the accuracy of payroll calculations, processes the semi-monthly payroll, and maintains and provides detailed information to employees for specific payroll functions. #}
+  </div>
+  <div class="mdl-card__actions mdl-card--border text-center">
+  <a href="#"><button class="px-5 butt buttono mdl-button mdl-js-button mdl-button--raised mdl-button--accent ">
+                    Continue reading
+                  </button></a>
+  </div>
+  <div class="mdl-card__menu">
+    <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+      <i class="bi bi-share-fill text-white"></i>
+    </button>
+  </div>
+</div>
+           
+    </div>
+    <hr class="container my-5">
+    <!-- blog end-->
+    <!-- Testimonials area start -->
+    <h2 class="container text-center mt-5 fw-bold">Our testimonials</h2>
+    <!-- Swiper -->
+    <div class="swiper mySwiper ">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide shadow pt-5">
+                <img class="img-thumbnail" src="assets/images/Joseph.jpeg" alt="" width="100rem" height="100rem">
+                <p class="h4 pt-5 fw-bold">Joseph K.</p>
+               {#  <hr style="background-color:#114B5F; padding:0% 20% 0% 20%;"> #}
+                <p class="text-start"><i class="bi bi-quote fw-bold fs-2"></i>I would like to say a heartfelt thank you to MWB who gave me the opportunity to take a training with our best and honourable mentor Mayank, who teaches us very carefully and so enthusiastically.
+The mental process and Mayank's words gave me a new path by which I improve myself now, I got a job and this will help to go ahead.</p>
+                <h6 class="text-center fw-bold">Achievements:</h6>
+                    <p class="text-center"> reached C1 level in business english <br> gained communication skills and improved team management in managing teams and communicating
+                </p>
+            </div>
+            <div class="swiper-slide shadow pt-5">
+                <img class="img-thumbnail" src="assets/images/sarah.jpeg" alt="" width="100rem" height="100rem">
+                <p class="h4 pt-5 fw-bold">Sarah Y.</p>
+                <p class="text-start"><i class="bi bi-quote fw-bold fs-2"></i>My sessions with MWB have been really helpful. I pursue a bachelor's degree in Pharmacy but I also find interest in business courses. Apart from being a pharmacist, I also want to be a product manager and MWB has empowered my dream through its mentorship program. My mentors have been amazing, they're the most understanding people I've interacted with and approachable as well. I've been able to seek clarification where I don't understand and learnt to be faithful to myself by having to adhere to my learning schedule. I feel privileged to have learnt so much with my mentors.</p>
+              <h6 class="text-center fw-bold">Achievements:</h6>
+                    <p class="text-center"> reached C1 level in business english <br> gained communication skills and improved team management in managing teams and communicating
+                </p>
+            </div>
+            <div class="swiper-slide  shadow pt-5"> <img class="img-thumbnail" src="assets/images/Rosa.jpeg" alt="" width="100rem" height="100rem">
+               <p class="h4 pt-5 fw-bold">Rosa M. B.</p>
+                <p class="text-start"><i class="bi bi-quote fw-bold fs-2"></i>Greetings to Mentorships Without Borders MWB. I wish to take this very opportunity to thank the MWB organization. Thanks to my mentor, Mukul Anand. I learned a lot from the program under the guidance of Mukul. I really had a good experience and I enjoyed the process and every part of the program. This was indeed a dream come true. I learned programming, software like CSS, Bootstrap, Java and how to build apps and websites.</p>
+                <h6 class="text-center fw-bold">Achievements:</h6>
+                    <p class="text-center"> reached C1 level in business english <br> gained communication skills and improved team management in managing teams and communicating
+                </p>
+            </div>
+            <div class="swiper-slide shadow pt-5"> <img class="img-thumbnail" src="assets/images/Raj.jpeg" alt="" width="100rem" height="100rem">
+                <p class="h4 pt-5 fw-bold">Raj R.</p>
+                <p class="text-start"><i class="bi bi-quote fw-bold fs-2"></i>I am sincerely grateful for this wonderful opportunity provided by MWB for free. I have always desired switching from social science to tech or integrating both skills to harness my community development work, but the financial constraints and lack of motivation has always kept me back. After coming across the call for mentees from MWB in the Open Dreams WhatsApp platform, I immediately applied. Now I am happily learning programming and web development basics. I am confident that I will soon build my own website and become a backend developer. Thank you MWB!</p>
+                <h6 class="text-center fw-bold">Achievements:</h6>
+                    <p class="text-center"> reached C1 level in business english <br> gained communication skills and improved team management in managing teams and communicating
+                </p>
+            </div>
+            <div class="swiper-slide shadow pt-5"> <img class="img-thumbnail" src="assets/images/Wong.jpeg" alt="" width="100rem" height="100rem">
+              <p class="h4 pt-5 fw-bold">Wong Ch. Ch..</p>
+                <p class="text-start"><i class="bi bi-quote fw-bold fs-2"></i>I am very grateful to MWB Mentors. I really enjoyed the sessions of Ashwini, her way of teaching is very good. She takes care of the convenience of the students and never hesitates to help. Edmond has also helped me a lot in achieving my goals. He also gave me good blogs to read. Adopting them has changed my lifestyle a lot and I also believe that I am very close to my goals. So I want to say a heartfelt thank you to the mentors of MWB and it was a pleasure learning from them. Thank you!</p>
+            <h6 class="text-center fw-bold">Achievements:</h6>
+                    <p class="text-center"> reached C1 level in business english <br> gained communication skills and improved team management in managing teams and communicating
+                </p>
+            </div>
+            <div class="swiper-slide shadow pt-5"> <img class="img-thumbnail" src="assets/images/Hannah.jpeg" alt="" width="100rem" height="100rem">
+                <p class="h4 pt-5 fw-bold">Hannah K.</p>
+                <p class="text-start"><i class="bi bi-quote fw-bold fs-2"></i>I have been enjoying the lessons with madam Bhoomika and the relaxation method too I am becoming used to it. The steps I have been adding makes me think I am closer to my goal.</p>
+               <h6 class="text-center fw-bold">Achievements:</h6>
+                    <p class="text-center"> reached C1 level in business english <br> gained communication skills and improved team management in managing teams and communicating
+                </p>
+            </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+    </div>
+    <hr class="container my-5">
+    <!-- Testimonials area end-->
+
+    <!-- blog aticles start-->
+    <div class="container">
+   
+
+<div class="demo-card-wide mdl-card mdl-shadow--2dp shadow my-5" style="background: url('../assets/images/planner.jpeg') center / cover; opacity:0.9;">
+  <div class="mdl-card__title">
+    <h2 class="mdl-card__title-text">5 New year’s resolutions ideas</h2>
+  </div>
+  <div class="mdl-card__supporting-text">
+   Work smarter not harder
+Using our time smarter to get more done may not look as most people think. Multitasking has been shown to have a detrimental effect on the quantity and quality of work done so try and focus on one thing at a time but take a lot of breaks... {# Resting is important for productivity so afternoon naps might be a good solution for you too.
+
+Learn a new hobby
+Hobbies are a good way to disconnect from your work life and quickly switch to something that enriches your life. Remember that not all hobbies need to be turned into a profit, sometimes just doing something you enjoy on the side is enough.
+
+Declutter
+With working from home being the norm for so many of us nowadays, the space we spend most of our day is now also the space where we eat, store our things and sleep. A comfortable working and living space may not always be synonymous so decluttering can free up space for us to organize our lives better. Try to give every item you want to keep a “home” where it should always go when it’s not being used.
+
+Read before you go to sleep
+Reading opens up our mind to different worlds and ideas, it helps up take a step back from real life and calm down. Try different genres and topics: reading doesn’t have to look the same for everyone; shorter bursts of nonfiction or lengthy deep dives into lore, find what you enjoy and stick with it.
+
+Keep a journal
+Sometimes, writing our thoughts down might be all we need to stop ruminating on that bothersome thing on our mind. Journals may seem fun to look back on as the years go by but they have a great potential to help us regulate our feelings and be more aware of them. For some people, a good start is getting a fancy notebook to write in, for others it’s better to find a nifty app for this. #}
+  </div>
+  <div class="mdl-card__actions mdl-card--border text-center">
+   <a href="#"><button class="px-5 butt buttono mdl-button mdl-js-button mdl-button--raised mdl-button--accent ">
+                    Continue reading
+                  </button></a>
+  </div>
+  <div class="mdl-card__menu">
+    <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+       <i class="bi bi-share-fill text-white"></i>
+    </button>
+  </div>
+</div>
+
+<div class="demo-card-wide mdl-card mdl-shadow--2dp shadow" style="background: url('../assets/images/job.jpeg') center / cover; opacity:0.9;">
+  <div class="mdl-card__title">
+    <h2 class="mdl-card__title-text">Our Top 3 tips to nail a job interview</h2>
+  </div>
+  <div class="mdl-card__supporting-text">
+    Getting your dream job might mean passing some difficult job interviews, here are our top 3 tips on how to best catch the eye of your future employer:
+Do your research
+Coming in prepared to an interview sets you up on a good track to success...{#  Researching the company and the role will give you a better idea on the questions you might be asked and what answers they might be looking for.
+
+Be a fit for the role
+Make sure that you would be capable of the role and that your CV reflects that. You may cut down on the listings in your CV if they aren’t relevant to the job you’re after.
+
+Prepare your own questions
+A job is an exchange of labor for a piece of the profit, don’t forget that they wanted to higher someone in the first place and take your time to ask and make sure they are also a good fit for you. Your gut feeling might be a bigger indicator of your future contentedness rather than the paycheck and benefits. #}
+  </div>
+  <div class="mdl-card__actions mdl-card--border text-center">
+    <a href="#"><button class="px-5 butt buttono mdl-button mdl-js-button mdl-button--raised mdl-button--accent ">
+                    Continue reading
+                  </button></a>
+  </div>
+  <div class="mdl-card__menu">
+    <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+       <i class="bi bi-share-fill text-white"></i>
+    </button>
+  </div>
+</div>
+
+
+        </div>
+ <!-- blog aticles end-->
+
+    <!-- partner logos with partner links or something like this -->
+    
+        <a href="/partners"><marquee class="mt-5 shadow" behavior="scroll" direction="left">
+<img class="logoPart" src="https://mentorswithoutborders.net/images/partners/HOPE-Foundation.png" alt="HOPE-Foundation">
+<img class="logoPart" src="https://mentorswithoutborders.net/images/partners/SOS-Childrens-Villages.png" alt="SOS-Childrens-Villages">
+<img class="logoPart" src="https://mentorswithoutborders.net/images/partners/SI4DEV.png" alt="SI4DEV">
+<img class="logoPart" src="https://mentorswithoutborders.net/images/partners/Hero-Women-Rising.png" alt="Hero-Women-Rising">
+<img class="logoSpec" src="https://mentorswithoutborders.net/images/partners/Solve-Education.png" alt="Solve-Education">
+<img class="logoPart" src="https://mentorswithoutborders.net/images/partners/FundLife-International.png" alt="FundLife-International">
+<img class="specImg" src="https://mentorswithoutborders.net/images/partners/Literacy-India.png" alt="Literacy-India">
+<img class="logoSpec" src="https://mentorswithoutborders.net/images/partners/Education-for-All-Children.png" alt="Education-for-All-Children">
+<img class="logoPart" src="https://mentorswithoutborders.net/images/partners/Railway-Children.png" alt="Railway-Children">
+        </marquee></a>
+    
+
+  
+    <!-- footer goes here-->
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <link rel="stylesheet" href="home.css">
+ {% block javascripts %}
+          <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+           <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+            <!--swipeeeeeeeeeeeeeeeeeeeeeeeeeeer-->
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            loop: true,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+    </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        {% endblock %}
+{% endblock %}

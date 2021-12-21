@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400;500;700;800&display=swap');
+body {
+    background-color: #F3E9D2;
+    font-family: Baloo Bhaijaan;
+}
+
+.partnerHeading {
+    font-size: 5em;
+    font-weight: 800;
+    color: #1a936f !important;
+}
+
+hr {
+    color: black;
+    opacity: 10;
+    background-color: black;
+    border: none;
+    height: 10px;
+}
+
+header {
+    background-image: url('pix/5236.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+.headerDiv {
+    padding: 10% 0% 0% 7%;
+}
+
+button {
+    background-color: rgb(192, 46, 46)/* #88d498 */
+    !important;
+}
+
+h2 {
+    color: #1a936f !important;
+}
+
+.partnerIntro {
+    padding: 0% 15% 0% 15%;
+}
+
+.demo-card-square.mdl-card {
+    width: 320px;
+    height: 320px;
+}
+
+.demo-card-square>.mdl-card__title {
+    color: #fff;
+    background: url('../assets/demos/dog.png') bottom right 15% no-repeat #46B6AC;
+}
+
+img {
+    width: 20rem;
+}
+
+.specImg {
+    width: 13rem !important;
+}
+
+.col:hover {
+    transform: matrix(1.05, 0, 0, 1.05, 0, 0);
+    transition-duration: 0.5s;
+}

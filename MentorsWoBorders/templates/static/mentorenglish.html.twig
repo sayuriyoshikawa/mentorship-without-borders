@@ -1,0 +1,649 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}DASHBOARD
+{% endblock %}
+
+{% block body %}
+	<style>
+		html,
+		body {
+			overflow-x: hidden;
+			height: 100%;
+		}
+
+		body {
+			background-color: #F3E9D2;
+			padding: 0;
+			margin: 0;
+			/* font-family: 'Baloo Bhaijaan 2', cursive; */
+		}
+
+		/* navbar style start  */
+		.header {
+			display: block;
+			margin: 0 auto;
+			width: 100%;
+			max-width: 100%;
+			box-shadow: none;
+			background-color: #114B5F;
+			position: fixed;
+			height: 60px !important;
+			overflow: hidden;
+			z-index: 10;
+		}
+		.header h2 {
+			text-align: center;
+			margin-top: 15px;
+			color: white;
+		}
+
+		.main {
+			margin: 60px auto 0;
+			display: block;
+			height: 100%;
+		}
+
+		.mainInner {
+			display: table;
+			height: 100%;
+			width: 100%;
+			text-align: center;
+		}
+
+		.mainInner div {
+			display: table-cell;
+			vertical-align: middle;
+			font-size: 3em;
+			font-weight: bold;
+			letter-spacing: 1.25px;
+		}
+
+		#sidebarMenu {
+			height: 100%;
+			position: fixed;
+			left: 0;
+			width: 250px;
+			margin-top: 60px;
+			transform: translateX(-250px);
+			transition: transform 250ms ease-in-out;
+			background: #Fff;
+			z-index: 100;
+		}
+
+		.sidebarMenuInner {
+			margin: 0;
+			padding: 0;
+			border-top: 1px solid rgba(255, 255, 255, 0.10);
+		}
+
+		.sidebarMenuInner li {
+			list-style: none;
+			color: #114B5F;
+			text-transform: uppercase;
+			font-weight: bold;
+			padding: 20px;
+			cursor: pointer;
+			border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+		}
+
+		.limenu li:hover {
+			background-color: #F3E9D2;
+		}
+
+		.sidebarMenuInner li span {
+			display: block;
+			font-size: 14px;
+			color: rgba(255, 255, 255, 0.50);
+		}
+
+		.sidebarMenuInner li a {
+			color: #114B5F;
+			text-transform: uppercase;
+			font-weight: bold;
+			cursor: pointer;
+			text-decoration: none;
+		}
+
+		input[type="checkbox"]:checked~#sidebarMenu {
+			transform: translateX(0);
+		}
+
+		input[type=checkbox] {
+			transition: all 0.3s;
+			box-sizing: border-box;
+			display: none;
+		}
+
+		.sidebarIconToggle {
+			transition: all 0.3s;
+			box-sizing: border-box;
+			cursor: pointer;
+			position: absolute;
+			z-index: 99;
+			height: 100%;
+			width: 100%;
+			top: 22px;
+			left: 15px;
+			height: 22px;
+			width: 22px;
+		}
+
+		.spinner {
+			transition: all 0.3s;
+			box-sizing: border-box;
+			position: absolute;
+			height: 3px;
+			width: 100%;
+			background-color: #fff;
+		}
+
+		.horizontal {
+			transition: all 0.3s;
+			box-sizing: border-box;
+			position: relative;
+			float: left;
+			margin-top: 3px;
+		}
+
+		.diagonal.part-1 {
+			position: relative;
+			transition: all 0.3s;
+			box-sizing: border-box;
+			float: left;
+		}
+
+		.diagonal.part-2 {
+			transition: all 0.3s;
+			box-sizing: border-box;
+			position: relative;
+			float: left;
+			margin-top: 3px;
+		}
+
+		input[type=checkbox]:checked~.sidebarIconToggle > .horizontal {
+			transition: all 0.3s;
+			box-sizing: border-box;
+			opacity: 0;
+		}
+
+		input[type=checkbox]:checked~.sidebarIconToggle > .diagonal.part-1 {
+			transition: all 0.3s;
+			box-sizing: border-box;
+			transform: rotate(135deg);
+			margin-top: 8px;
+		}
+
+		input[type=checkbox]:checked~.sidebarIconToggle > .diagonal.part-2 {
+			transition: all 0.3s;
+			box-sizing: border-box;
+			transform: rotate(-135deg);
+			margin-top: -9px;
+		}
+
+		.sidebarMenuInner img {
+			width: 80%;
+			margin: auto;
+		}
+		/* nabvar style end  */
+
+		h1 {
+			margin-top: 20px;
+			font-size: 5rem;
+			font-weight: 700;
+			color: #1A936F;
+			text-align: center;
+		}
+
+		.howto {
+			width: 100%;
+			height: 100%;
+			margin: 4rem 0 5rem;
+			display: flex;
+			justify-content: end;
+		}
+
+		.howto p {
+			font-size: 22px;
+			padding: 10px;
+		}
+
+		.howto img {
+			width: 20%;
+			min-width: 220px;
+			margin-right: 8%;
+		}
+
+		.howtocard {
+			width: 60%;
+		}
+
+		.bio {
+			height: 100%;
+			padding: 10px;
+		}
+
+		.bio img {
+			overflow: hidden;
+			height: 11vw;
+			min-height: 80px;
+		}
+
+		.bio h4 {
+			text-align: center;
+			margin-top: 5px;
+		}
+
+		.biocardcontent {
+			height: 80%;
+		}
+		.table {
+			width: 60%;
+			color: #114B5F;
+		}
+		.card-body {
+			text-align: left;
+			height: 90%;
+		}
+
+		.sortbtn {
+			background-color: #88D498;
+			color: white;
+		}
+
+		.contactbtn {
+			width: 90%;
+			background-color: #FDB443;
+			margin-left: 16px;
+			color: white;
+		}
+		h1, h2, h3, h4, h5, h6 {
+			 font-family: 'Baloo Bhaijaan 2', cursive;
+		}
+		 @media screen and (max-width:486px) {
+			 .header h2 {
+                font-size:5vw!important;
+			 }
+		 }
+
+		@media screen and(max-width:767px) {
+			h1 {
+				width: 100vw;
+				font-size: 4rem;
+			}
+
+			.howto {
+				width: 100%;
+				height: 100%;
+				margin: auto;
+				display: block;
+			}
+
+			.howto p {
+				font-size: 18px;
+				padding: 6px;
+			}
+
+			.howto img {
+				height: 20%;
+				min-height: 100px;
+				padding: 10px;
+				text-align: center;
+			}
+
+			.howtocard {
+				width: 100%;
+			}
+
+			.sort {
+				margin-top: 30px;
+			}
+
+			.bio img {
+				margin-left: 5%;
+
+			}
+
+			.bio h4 {
+				margin-left: 2rem;
+				margin-top: 2rem;
+			}
+
+			.bioleft {
+				display: flex;
+				width: 100%;
+			}
+			.pictureandname {
+				width: 40%;
+			}
+			.pictureandname img {
+				width: 150px;
+				height: auto;
+
+			}
+			.pictureandname h4 {
+				margin-left: 0;
+			}
+			.info {
+				width: 60%;
+			}
+		}
+		@media screen and(max-width:425px) {
+			.bioleft {
+				display: block;
+				width: 100%;
+			}
+			.pictureandname {
+				margin: auto;
+			}
+			.info {
+				width: 80%;
+				margin: auto;
+			}
+			.table {
+				width: 90%;
+			}
+
+		}
+	</style>
+
+	{# 
+		<h1>Hello
+			{{self.firstname}}
+		</h1>
+	
+		<a href="/logout">
+			LOG OUT
+		</a> #}
+
+	{# {% if self.approved == 'Approved' %} #}
+
+	{# navbar start  #}
+		{% if self.approved == 'Approved' %}
+
+			<div class="header"><h2 class="mt-2" style="font-size:2rem;  font-family: 'Baloo Bhaijaan 2', cursive;">Mentorship <img src="../../assets/images/logo5.jpg" class="logo-sm" style="height: 40px;"> Without Borders</h2>
+		</div>
+		<input type="checkbox" class="openSidebarMenu" id="openSidebarMenu">
+		<label for="openSidebarMenu" class="sidebarIconToggle">
+			<div class="spinner diagonal part-1"></div>
+			<div class="spinner horizontal"></div>
+			<div class="spinner diagonal part-2"></div>
+		</label>
+		<div id="sidebarMenu">
+			<ul class="sidebarMenuInner">
+				<center>
+					<!-- profile image, name  -->
+					{% for mentee in mentees %}
+						<li><img src="{{mentee.picture}}" alt="">
+						{% endfor %}
+						{{self.firstname}}</li>
+				</center>
+				<div class="limenu">
+					<li>
+						<a href="/home">Home</a>
+					</li>
+					{#      <li><a href="#">Workbook</a></li> #}
+					<li>
+						<a href="/mentorfind">Find mentor</a>
+					</li>
+					{#     <li><a href="/mentoredit">Edit bio</a></li>
+																																		<li><a href="/mentorcreate">Create bio</a></li> #}
+					<li>
+						<a href="/logout">
+							Log out</a>
+					</li>
+				</div>
+			</ul>
+		</div><br><br><br>
+		{# navbar end  #}
+
+
+		<h1>Find your mentor</h1>
+		<div
+			class="container mb-5">
+
+			<!-- how to start -->
+			<div class="howto">
+
+				<img src="../../assets/images/find.png" alt="">
+
+				<div class="card howtocard border-0">
+					<div class="card-body">
+						<h3 class="mt-0 mb-1 ms-1">How to</h3>
+						<p class="card-text">We have hundreds of mentors to help you grow your skills.
+							<br>If you find a mentor who suits you, you can contact via the contact button.</p>
+					</div>
+				</div>
+			</div>
+			{# how to end  #}
+
+			<!-- sort  -->
+
+				<div class="dropdown sort mb-3">
+				<button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+					Languages
+				</button>
+				<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+					<li>
+						<a class="dropdown-item" href="/mentorfind">All</a>
+					</li>
+					<li>
+						<a class="dropdown-item" href="/mentorenglish">English</a>
+					</li>
+					<li>
+						<a class="dropdown-item" href="/mentorgerman">German</a>
+					</li>
+					<li>
+						<a class="dropdown-item" href="/mentorspanish">Spanish</a>
+					</li>
+					<li>
+						<a class="dropdown-item" href="/mentorjapanese">Japanese</a>
+					</li>
+					<li>
+						<a class="dropdown-item" href="/mentorfrench">French</a>
+					</li>
+				</ul>
+			</div>
+
+			<!-- sort end -->
+
+			<!-- mentor bio loop start-->
+			{% if self.mentormantee == 'Mentee' %}
+				{% for mentor in mentors %}
+					{% if mentor.capacity > 0 %}
+					{% if mentor.languageone == "English" or mentor.languagetwo == "English" or mentor.languagethree =="English" %}
+						<div class="card mb-5 mentorbio border-0">
+							<div class="row g-0 bio">
+								<div class="col-lg-4 col-md-4 bioleft">
+									<div class="pictureandname">
+										<center>
+											{% if mentor.picture =="" %}
+												<img src="../../assets/images/profi.png">
+											{% else %}
+												<img src="	{{mentor.picture | e}}" alt="{{mentor.username | e}}" class="img-fluid rounded"/>
+											{% endif %}
+										</center>
+										<h4>{{mentor.fk_user.firstname}}
+											{{mentor.fk_user.lastname}}</h4>
+									</div>
+									<div class="info">
+										<center>
+											<table class="table">
+												<tbody>
+													<tr>
+														<th scope="row" class="border-0">Country</th>
+														<td class="border-0">{{mentor.country}}</td>
+													</tr>
+													<tr>
+														<th scope="row" class="border-0">Langage</th>
+														<td class="border-0">
+															{{mentor.languageone}}<br>
+															{% if mentor.languagetwo != " " %}
+																{{mentor.languagetwo}}<br>
+															{% endif %}
+															{% if mentor.languagethree != " " %}
+																{{mentor.languagethree}}
+															{% endif %}
+														</td>
+													</tr>
+													<tr>
+														<th scope="row" class="border-0">Skills</th>
+														<td class="border-0">{{mentor.skills}}</td>
+													</tr>
+													<tr>
+														<th scope="row" class="border-0">Profession</th>
+														<td class="border-0">{{mentor.profession}}</td>
+													</tr>
+														<tr>
+														<th scope="row" class="border-0">Contact</th>
+														<td class="border-0" style="overflow-wrap: anywhere;">{{mentor.contact}}</td>
+													</tr>
+													<tr>
+														<th scope="row" class="border-0">Capacity</th>
+														<td class="border-0">{{mentor.capacity}}</td>
+													</tr>
+												</tbody>
+											</table>
+										</center>
+									</div>
+								</div>
+								<div class="col-lg-8 col-md-8">
+									<div class="card-body">
+
+										<div class="introduce">
+											<center>
+												<h3>About myself</h3>
+											</center>
+											<p class="mb-4">{{mentor.mentors_descripton | nl2br}}</p>
+
+
+											<center>
+												<h3>Profession description</h3>
+											</center>
+											<p>{{mentor.preofession_description}}
+											</p>
+										</div>
+
+
+									</div>
+									
+								</div>
+							</div>
+						</div>
+						<!-- mentor io loop end -->
+
+					{% endif %}
+					{% endif %}
+				{% endfor %}
+			</div>
+		{% else %}
+			<h1>
+				Only accessible by Mentees
+			</h1>
+		{% endif %}
+	{% else %}
+		<h2>
+			Not approved for mentorship programm
+		</h2>
+	{% endif %}
+{% endblock %}
+
+
+{# old  #}
+{# <p class='h2'>User</p>
+		<div class="dropdown">
+			<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+				Sort by Language
+			</button>
+			<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+				<li>
+					<a class="dropdown-item" href="/mentorenglish">English</a>
+				</li>
+				<li>
+					<a class="dropdown-item" href="/mentorgerman">German</a>
+				</li>
+				<li>
+					<a class="dropdown-item" href="#">Something else here</a>
+				</li>
+			</ul>
+		</div> #}
+
+{# {% if self.mentormantee == 'Mentee' %}
+			{% for mentor in mentors %}
+				{% if mentor.capacity > 0 %} #}
+{# <div class="row bg-secondary mb-4">
+
+						<div class="col-3">
+							{% if mentor.picture =="" %}
+								<img src="https://image.shutterstock.com/image-vector/no-user-profile-picture-hand-260nw-99335579.jpg">
+							{% else %}
+								<img src="	{{mentor.picture | e}}" alt="{{mentor.username | e}}" class="img-fluid rounded"/>
+							{% endif %}
+							<p>{{mentor.fk_user.firstname}}
+								{{mentor.fk_user.lastname}}</p>
+						</div>
+						<div class="col-8">
+							<div class="row">
+								<h2>
+									Bio
+								</h2>
+								<div class="col-4">
+									<ul>
+
+										{{mentor.mentors_descripton | nl2br}}
+
+										<li>
+											{{mentor.profession}}
+										</li>
+										<li>
+											{{mentor.preofession_description}}
+										</li>
+
+
+										<li>
+											{{mentor.skills}}
+										</li>
+										<li>
+											<ul>
+												<li>
+													{{mentor.languageone}}
+												</li>
+												{% if mentor.languagetwo != " " %}
+													<li>
+														{{mentor.languagetwo}}
+													</li>
+
+												{% endif %}
+												{% if mentor.languagethree != " " %}
+													<li>
+														{{mentor.languagethree}}
+													</li>
+
+												{% endif %}
+											</ul>
+
+											{# {{mentor.languagethree}}, #}
+
+{# </li>
+
+									</ul>
+								</div>
+
+								<div class="col-4">
+									<ul>
+										<li>
+											{{mentor.contact}}
+										</li>
+										<li>
+											{{mentor.country}}
+										</li>
+										<li>
+											{{mentor.capacity}}
+										</li>
+
+									</ul>
+								</div>
+								<div class="col-4"></div>
+							</div>
+						</div>
+
+					</div> #}
